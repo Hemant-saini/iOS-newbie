@@ -57,10 +57,10 @@
             </objects>
             <point key="canvasLocation" x="925.60000000000002" y="129.98500749625188"/>
         </scene>
-        <!--Show Detail For Map-->
+        <!--Show Detail Map View Controller-->
         <scene sceneID="Mca-qs-NoM">
             <objects>
-                <viewController id="aeJ-dl-BPD" customClass="showDetailForMap" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="map" id="aeJ-dl-BPD" customClass="ShowDetailMapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jkk-s6-qfh"/>
                         <viewControllerLayoutGuide type="bottom" id="Dvz-ja-2WH"/>
@@ -73,7 +73,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="482"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <outlet property="delegate" destination="aeJ-dl-BPD" id="ltN-8J-O1i"/>
+                                    <outlet property="delegate" destination="aeJ-dl-BPD" id="whX-h3-FHW"/>
                                 </connections>
                             </mapView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Knv-w9-sTq">
@@ -94,14 +94,14 @@
                                         <rect key="frame" x="0.0" y="91" width="375" height="15"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.61107563970000001" green="0.090822674330000006" blue="0.1831915975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="sun-Thu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJ6-3D-sUn">
                                         <rect key="frame" x="8" y="108" width="64" height="15"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                        <color key="textColor" red="0.61107563970000001" green="0.090822674330000006" blue="0.1831915975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fri-Sat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMD-L1-S7d">
@@ -198,10 +198,10 @@
                     <connections>
                         <outlet property="addressAndArea" destination="z8e-pe-V6K" id="XDF-3b-WWg"/>
                         <outlet property="closeTime" destination="H4c-da-Kn4" id="icf-6J-n15"/>
-                        <outlet property="detailMapView" destination="pFV-6W-jhd" id="5mL-JV-iMk"/>
+                        <outlet property="detailMapView" destination="pFV-6W-jhd" id="I9T-VF-Eyi"/>
                         <outlet property="distanceCalculate" destination="DwH-sU-1hj" id="nXX-p1-des"/>
                         <outlet property="openTiming" destination="PFQ-eV-gAW" id="pnH-Vb-R1G"/>
-                        <outlet property="restaurantName" destination="md7-cp-meO" id="13o-hC-P8i"/>
+                        <outlet property="restaurantName" destination="md7-cp-meO" id="K31-ng-YCS"/>
                         <outlet property="weekDay" destination="NJ6-3D-sUn" id="01C-DB-0zH"/>
                         <outlet property="weekEndDay" destination="WMD-L1-S7d" id="T9w-Dy-oMb"/>
                     </connections>

@@ -8,7 +8,6 @@
 
 #import "ViewMapController.h"
 #import <CoreLocation/CoreLocation.h>
-#import "showDetailForMap.h"
 #import "MyAnnotation.h"
 
 @interface ViewMapController ()
@@ -16,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @end
+
 
 @implementation ViewMapController
 
@@ -73,19 +73,39 @@
         
         [self.mapView addAnnotation:annotationObj];
     }
-    [self panToLocationListMarkers];
+    
+    [self panToLocationListMarkers:_mapView];
     
 }
 
-- (void)panToLocationListMarkers {
-    MKMapRect zoomRect = MKMapRectNull;
-    for (id <MKAnnotation> annotation in _mapView.annotations)
-    {
-        MKMapPoint annotationPoint = MKMapPointForCoordinate(annotation.coordinate);
-        MKMapRect pointRect = MKMapRectMake(annotationPoint.x, annotationPoint.y, 0.1, 0.1);
-        zoomRect = MKMapRectUnion(zoomRect, pointRect);
+- (void)panToLocationListMarkers:(MKMapView *)mapView {
+    if ([mapView.annotations count] == 0) return;
+    
+    CLLocationCoordinate2D topLeftCoord;
+    topLeftCoord.latitude = -90;
+    topLeftCoord.longitude = 180;
+    
+    CLLocationCoordinate2D bottomRightCoord;
+    bottomRightCoord.latitude = 90;
+    bottomRightCoord.longitude = -180;
+    
+    for(id<MKAnnotation> annotation in mapView.annotations) {
+        topLeftCoord.longitude = fmin(topLeftCoord.longitude, annotation.coordinate.longitude);
+        topLeftCoord.latitude = fmax(topLeftCoord.latitude, annotation.coordinate.latitude);
+        bottomRightCoord.longitude = fmax(bottomRightCoord.longitude, annotation.coordinate.longitude);
+        bottomRightCoord.latitude = fmin(bottomRightCoord.latitude, annotation.coordinate.latitude);
     }
-    [_mapView setVisibleMapRect:zoomRect animated:YES];
+    
+    MKCoordinateRegion region;
+    region.center.latitude = topLeftCoord.latitude - (topLeftCoord.latitude - bottomRightCoord.latitude) * 0.5;
+    region.center.longitude = topLeftCoord.longitude + (bottomRightCoord.longitude - topLeftCoord.longitude) * 0.5;
+    
+    // Add a little extra space on the sides
+    region.span.latitudeDelta = fabs(topLeftCoord.latitude - bottomRightCoord.latitude) * 1.1;
+    region.span.longitudeDelta = fabs(bottomRightCoord.longitude - topLeftCoord.longitude) * 1.1;
+    
+    region = [mapView regionThatFits:region];
+    [mapView setRegion:region animated:YES];
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)sender viewForAnnotation:(id < MKAnnotation >)annotation {
@@ -114,7 +134,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"map"]) {
-        showDetailForMap *samePage = (showDetailForMap *)[segue destinationViewController];
+        ShowDetailMapViewController *samePage = (ShowDetailMapViewController *)[segue destinationViewController];
         samePage.sentAnnotation = self.selectedAnnotation;
     }
 }

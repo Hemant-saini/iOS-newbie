@@ -1,6 +1,6 @@
 //
 //  MyAnnotation.h
-//  selectMapLocation
+//  
 //
 //  Created by Hemant Saini on 15/03/17.
 //  Copyright © 2017 Hemant Saini. All rights reserved.
@@ -10,6 +10,7 @@
 #import <MapKit/MapKit.h>
 
 @interface MyAnnotation : NSObject<MKAnnotation>
+
 @property (nonatomic) CLLocationCoordinate2D coordinate;
 @property(strong,nonatomic)NSArray *timing;
 @property (strong, nonatomic) NSString *city;

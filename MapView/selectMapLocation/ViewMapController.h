@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "MyAnnotation.h"
+#import "ShowMapController.h"
+#import "ShowDetailMapViewController.h"
 
 @interface ViewMapController : UIViewController
-
-@property(nonatomic) BOOL zoomLocation;
-@property(nonatomic) int annotation;
-@property (nonatomic,retain) MKPointAnnotation *selectedAnnotation;
-
+@property (nonatomic) BOOL zoomLocation;
+@property (nonatomic) NSInteger annotation;
+@property (nonatomic, strong) MyAnnotation *selectedAnnotation;
 @end

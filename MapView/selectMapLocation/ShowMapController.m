@@ -1,17 +1,34 @@
 //
-//  showDetailForMap.m
+//ShowMapController.m
 //  selectMapLocation
 //
 //  Created by Hemant Saini on 07/03/17.
 //  Copyright © 2017 Hemant Saini. All rights reserved.
 //
+#import "ShowMapController.h"
+#import <MapKit/MapKit.h>
 
-#import "showDetailForMap.h"
+@interface ShowMapController()
 
-@implementation showDetailForMap
+@property (weak, nonatomic) IBOutlet UIView *viewMapDetails;
+@property (weak, nonatomic) IBOutlet UILabel *showDistance;
+@property (weak, nonatomic) IBOutlet MKMapView *detailMapView;
+@property (weak, nonatomic) IBOutlet UILabel *restaurantName;
+@property (weak, nonatomic) IBOutlet UILabel *addressAndArea;
+@property (weak, nonatomic) IBOutlet UILabel *distanceCalculate;
+@property (weak, nonatomic) IBOutlet UILabel *weekDay;
+@property (weak, nonatomic) IBOutlet UILabel *weekEndDay;
+@property (weak, nonatomic) IBOutlet UILabel *openTiming;
+@property (weak, nonatomic) IBOutlet UILabel *closeTime;
+
+@end
+
+
+@implementation ShowMapController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _sentAnnotation = [[MyAnnotation alloc] init];
     CLLocationCoordinate2D coordinate = [self getLocation];
     CLLocation *restaurantLocation = [[CLLocation alloc]  initWithLatitude:_sentAnnotation.coordinate.latitude longitude:_sentAnnotation.coordinate.longitude];
     CLLocation *myLoc = [[CLLocation alloc] initWithLatitude:coordinate.latitude longitude:coordinate.longitude];
@@ -22,7 +39,7 @@
     zoomRect = MKMapRectUnion(zoomRect, pointRect);
     [_detailMapView setVisibleMapRect:zoomRect animated:YES];
     [_detailMapView addAnnotation:_sentAnnotation];
-    _restaurantName.text = _sentAnnotation.title;
+    _restaurantName.text = _sentAnnotation.name;
     _distanceCalculate .text = [NSString stringWithFormat:@"%0.3f mi.", distance*0.000621371];
     _addressAndArea.text = [NSString stringWithFormat:@"%@  %@  %@  %@ %@",
                             _sentAnnotation.city,
@@ -30,10 +47,10 @@
                             _sentAnnotation.crossstreet,
                             _sentAnnotation.state,
                             _sentAnnotation.streetaddress];
-    _weekDay.text = [[[_sentAnnotation timing] objectAtIndex:0] valueForKey:@"day"];
-    _weekEndDay.text = [[[_sentAnnotation timing] objectAtIndex:1] valueForKey:@"day"];
-    _openTiming.text = [[[_sentAnnotation timing] objectAtIndex:0] valueForKey:@"time"];
-    _closeTime.text = [[[_sentAnnotation timing] objectAtIndex:1] valueForKey:@"time"];
+    self.weekDay.text = [[[_sentAnnotation timing] objectAtIndex:0] valueForKey:@"day"];
+    self.weekEndDay.text = [[[_sentAnnotation timing] objectAtIndex:1] valueForKey:@"day"];
+    self.openTiming.text = [[[_sentAnnotation timing] objectAtIndex:0] valueForKey:@"time"];
+    self.closeTime.text = [[[_sentAnnotation timing] objectAtIndex:1] valueForKey:@"time"];
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)sender viewForAnnotation:(id <MKAnnotation>)annotation {

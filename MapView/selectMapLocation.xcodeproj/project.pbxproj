@@ -17,9 +17,9 @@
 		4C03391A1E6946BF00A9F525 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0339191E6946BF00A9F525 /* Foundation.framework */; };
 		4C03391D1E694B4100A9F525 /* ViewMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C03391C1E694B4100A9F525 /* ViewMapController.m */; };
 		4C0339211E695EA200A9F525 /* Locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C0339201E695EA200A9F525 /* Locations.json */; };
+		4CF0A1FE1E7BEC2500C547CA /* ShowDetailMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF0A1FD1E7BEC2500C547CA /* ShowDetailMapViewController.m */; };
 		4CF1E9C71E7930CE005717DC /* MyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF1E9C61E7930CE005717DC /* MyAnnotation.m */; };
 		4CF1E9CA1E793432005717DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CF1E9C81E793432005717DC /* Main.storyboard */; };
-		4CF417321E6EC1EA009456AB /* showDetailForMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF417311E6EC1EA009456AB /* showDetailForMap.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,11 +37,11 @@
 		4C03391B1E694B4100A9F525 /* ViewMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewMapController.h; sourceTree = "<group>"; };
 		4C03391C1E694B4100A9F525 /* ViewMapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewMapController.m; sourceTree = "<group>"; };
 		4C0339201E695EA200A9F525 /* Locations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Locations.json; sourceTree = "<group>"; };
+		4CF0A1FC1E7BEC2500C547CA /* ShowDetailMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowDetailMapViewController.h; sourceTree = "<group>"; };
+		4CF0A1FD1E7BEC2500C547CA /* ShowDetailMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowDetailMapViewController.m; sourceTree = "<group>"; };
 		4CF1E9C51E7930CE005717DC /* MyAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAnnotation.h; sourceTree = "<group>"; };
 		4CF1E9C61E7930CE005717DC /* MyAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAnnotation.m; sourceTree = "<group>"; };
 		4CF1E9C91E793432005717DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4CF417301E6EC1EA009456AB /* showDetailForMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = showDetailForMap.h; sourceTree = "<group>"; };
-		4CF417311E6EC1EA009456AB /* showDetailForMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = showDetailForMap.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +115,8 @@
 			children = (
 				4C03391B1E694B4100A9F525 /* ViewMapController.h */,
 				4C03391C1E694B4100A9F525 /* ViewMapController.m */,
-				4CF417301E6EC1EA009456AB /* showDetailForMap.h */,
-				4CF417311E6EC1EA009456AB /* showDetailForMap.m */,
+				4CF0A1FC1E7BEC2500C547CA /* ShowDetailMapViewController.h */,
+				4CF0A1FD1E7BEC2500C547CA /* ShowDetailMapViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -223,8 +223,8 @@
 				4C0338E41E693E2700A9F525 /* AppDelegate.m in Sources */,
 				4CF1E9C71E7930CE005717DC /* MyAnnotation.m in Sources */,
 				4C0338E11E693E2700A9F525 /* main.m in Sources */,
-				4CF417321E6EC1EA009456AB /* showDetailForMap.m in Sources */,
 				4C03391D1E694B4100A9F525 /* ViewMapController.m in Sources */,
+				4CF0A1FE1E7BEC2500C547CA /* ShowDetailMapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
