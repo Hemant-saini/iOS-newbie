@@ -29,6 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"Mooyah";
     CLLocationCoordinate2D coordinate = [self getLocation];
     CLLocation *restaurantLocation = [[CLLocation alloc]  initWithLatitude:_sentAnnotation.coordinate.latitude longitude:_sentAnnotation.coordinate.longitude];
     CLLocation *myLoc = [[CLLocation alloc] initWithLatitude:coordinate.latitude longitude:coordinate.longitude];
@@ -76,7 +77,6 @@
     [locationManager startUpdatingLocation];
     CLLocation *location = [locationManager location];
     CLLocationCoordinate2D coordinate = [location coordinate];
-    
     return coordinate;
 }
 
@@ -87,23 +87,26 @@
                                [self getLocation].longitude,
                                _sentAnnotation.coordinate.latitude,
                                _sentAnnotation.coordinate.longitude];
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:directionsURL] options:@{} completionHandler:^(BOOL success) {
-        if (success) {
-            NSLog(@"Opened url");
-        }
-    }];
-    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:directionsURL]
+                                       options:@{}
+                             completionHandler:^(BOOL success) {
+                                 if (success) {
+                                     NSLog(@"Opened url");
+                                 }
+                             }];
 }
 
 - (IBAction)btnPhoneTapped:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"tel://9876543210"] options:@{} completionHandler:^(BOOL success) {
-        if (success) {
-            NSLog(@"Opened url");
-        }
-        else {
-            NSLog(@"Failed to make a call");
-        }
-    }];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"tel:9876543210"]
+                                       options:@{}
+                             completionHandler:^(BOOL success) {
+                                 if (success) {
+                                     NSLog(@"Opened url");
+                                 }
+                                 else {
+                                     NSLog(@"Failed to make a call");
+                                 }
+                             }];
 }
 
 @end

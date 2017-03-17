@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "MyAnnotation.h"
 
-@interface ShowDetailMapViewController : UIViewController<CLLocationManagerDelegate>
+@interface ShowDetailMapViewController : UIViewController <CLLocationManagerDelegate>
+
 @property (strong, nonatomic) MyAnnotation *sentAnnotation;
 
 @end
