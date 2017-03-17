@@ -1,0 +1,85 @@
+ [
+      {
+      "brand": "Dine11",
+      "city": "Allen",
+      "country": "US",
+      "crossstreet": "SE corner of Stacy and Hwy 75",
+      "id": 3754,
+      "latitude": 33.128228,
+      "longitude": -96.657763,
+      "mobileurl": "http://Dine11.olosandbox.express/menu/allen/",
+      "name": "Dine11 Allen",
+      "state": "TX",
+      "storename": "Dine11",
+      "streetaddress": "190 E Stacy Rd #1714",
+      "supportedcardtypes": "American Express/Discover/MasterCard/Visa",
+      "telephone": "(555) 555-5555",
+      "url": "http://Dine11.olosandbox.com/menu/allen/",
+      "zip": "75002",
+      "timing": [
+                 {
+                 "day": "Mon-Thu",
+                 "time": "10:00AM-9:00PM"
+                 },
+                 {
+                 "day": "Fri-Sun",
+                 "time": "10:00AM-10:00PM"
+                 }
+                 ]
+      },
+      {
+      "brand": "Dine11",
+      "city": "Fort Worth",
+      "country": "US",
+      "crossstreet": "Heritage Trace Parkway",
+      "id": 9412,
+      "latitude": 32.9138841,
+      "longitude": -97.3069554,
+      "mobileurl": "http://Dine11.olosandbox.express/menu/Dine11-alliance/",
+      "name": "Dine11 Alliance",
+      "state": "TX",
+      "storename": "Dine11",
+      "streetaddress": "9604 Old Denton Rd. Suite 108",
+      "supportedcardtypes": "American Express/Discover/MasterCard/Visa",
+      "telephone": "(555) 555-5555",
+      "url": "http://Dine11.olosandbox.com/menu/Dine11-alliance/",
+      "zip": "76244",
+      "timing": [
+                 {
+                 "day": "Mon-Thu",
+                 "time": "10:00AM-9:00PM"
+                 },
+                 {
+                 "day": "Fri-Sun",
+                 "time": "10:00AM-10:00PM"
+                 }
+                 ]
+      },
+      {
+      "brand": "Dine11",
+      "city": "Richardson",
+      "country": "US",
+      "crossstreet": "Coit & West Campbell Rd",
+      "id": 3635,
+      "latitude": 32.980322,
+      "longitude": -96.7674636,
+      "mobileurl": "http://Dine11.olosandbox.express/menu/richardson/",
+      "name": "Dine11 Richardson",
+      "state": "TX",
+      "storename": "Dine11",
+      "streetaddress": "2160 N. Coit Road",
+      "telephone": "(555) 555-5555",
+      "url": "http://Dine11.olosandbox.com/menu/richardson/",
+      "zip": "75082",
+      "timing": [
+                 {
+                 "day": "Mon-Thu",
+                 "time": "10:00AM-9:00PM"
+                 },
+                 {
+                 "day": "Fri-Sun",
+                 "time": "10:00AM-10:00PM"
+                 }
+                 ]
+      }
+  ]
